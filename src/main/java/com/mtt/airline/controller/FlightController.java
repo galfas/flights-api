@@ -13,7 +13,12 @@ import com.mtt.airline.model.FlightQuery;
 import com.mtt.airline.model.Offers;
 import com.mtt.airline.utils.DateUtils;
 
-
+/**
+ * 
+ * Class that handles all the http methods that work with flights resources.
+ * 
+ * @author Marcelo Saciloto
+ */
 @RestController
 @RequestMapping("/flights")
 public class FlightController {
