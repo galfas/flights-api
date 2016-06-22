@@ -2,7 +2,6 @@ package com.mtt.airline.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Class that should encapsulate all the helper functions with dates.
@@ -11,12 +10,15 @@ import java.util.Date;
  */
 public class DateUtils {
 	
-	public static Date getDateFrom(String dateAsString) throws ParseException{
-		
+	public static boolean isValidDate(String dateAsString) {
+		boolean isValidDate = true;
 		SimpleDateFormat originalFormat = new SimpleDateFormat("yyyyMMdd");
-		Date date = originalFormat.parse(dateAsString);
+		try {
+			originalFormat.parse(dateAsString);
+		} catch (ParseException e) {
+			isValidDate =false;
+		}
 		
-		return date;
+		return isValidDate;
 	}
-	
 }

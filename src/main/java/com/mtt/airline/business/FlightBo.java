@@ -1,7 +1,7 @@
 package com.mtt.airline.business;
 
 import com.mtt.airline.model.FlightQuery;
-import com.mtt.airline.model.Offers;
+import com.mtt.airline.model.FlightOffer;
 
 /**
  * This class is responsible for handling the flights searches.
@@ -17,5 +17,5 @@ public interface FlightBo {
 	 * 
 	 * @return All the available flights.
 	 */
-	public Offers getTicket(FlightQuery flightQuery);
+	public FlightOffer getTicket(FlightQuery flightQuery);
 }

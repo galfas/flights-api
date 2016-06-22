@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.mtt.airline.dao.FlightDao;
 import com.mtt.airline.model.FlightQuery;
-import com.mtt.airline.model.Offers;
+import com.mtt.airline.model.FlightOffer;
 
 @Component
 public class FlightBoImpl implements FlightBo {
@@ -16,7 +16,7 @@ public class FlightBoImpl implements FlightBo {
 	/**
 	 * {@inheritDoc}
 	 */
-	public Offers getTicket(FlightQuery flightQuery){
+	public FlightOffer getTicket(FlightQuery flightQuery){
 		
 		return flightDao.getFlights(flightQuery);
 	}

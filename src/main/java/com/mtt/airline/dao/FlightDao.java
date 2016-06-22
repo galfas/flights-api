@@ -1,7 +1,7 @@
 package com.mtt.airline.dao;
 
 import com.mtt.airline.model.FlightQuery;
-import com.mtt.airline.model.Offers;
+import com.mtt.airline.model.FlightOffer;
 
 /**
  * This class is responsible for fetching the data from external.
@@ -15,5 +15,5 @@ public interface FlightDao {
 	 * @param flightQuery
 	 * @return
 	 */
-	public Offers getFlights(FlightQuery flightQuery);
+	public FlightOffer getFlights(FlightQuery flightQuery);
 }

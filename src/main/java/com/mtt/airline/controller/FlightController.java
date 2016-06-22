@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mtt.airline.business.FlightBo;
 import com.mtt.airline.model.FlightQuery;
-import com.mtt.airline.model.Offers;
-import com.mtt.airline.utils.DateUtils;
+import com.mtt.airline.model.FlightOffer;
 
 /**
  * 
@@ -28,14 +27,13 @@ public class FlightController {
 	
     @RequestMapping(method=RequestMethod.GET, 
     		value="/from/{cityFrom}/to/{cityTo}/datefrom/{dateFrom}/dateto/{dateTo}/quantity/{quantity}")
-    public Offers getFligths(@PathVariable(value="cityFrom") String cityFrom,
+    public FlightOffer getFligths(@PathVariable(value="cityFrom") String cityFrom,
     		@PathVariable(value="cityTo") String cityTo,
     		@PathVariable(value="dateFrom") String dateFrom,
     		@PathVariable(value="dateTo") String dateTo,
     		@PathVariable(value="quantity") Integer quantity) throws ParseException {
     	
-    	FlightQuery flightQuery = new FlightQuery(cityFrom, cityTo, 
-    			DateUtils.getDateFrom(dateFrom), DateUtils.getDateFrom(dateTo), quantity);
+    	FlightQuery flightQuery = new FlightQuery(cityFrom, cityTo, dateFrom, dateTo, quantity);
     	
     	return flightBo.getTicket(flightQuery);
     }

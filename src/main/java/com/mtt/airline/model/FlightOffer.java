@@ -5,15 +5,15 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Offers {
+public class FlightOffer {
 	
 	private List<Flight> availability;
 
 	
-	public Offers() {
+	public FlightOffer() {
 		super();
 	}
-	public Offers(List<Flight> availability) {
+	public FlightOffer(List<Flight> availability) {
 		super();
 		this.availability = availability;
 	}
