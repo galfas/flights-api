@@ -15,7 +15,10 @@ public class FareXml{
 	private String fees;
 	private String tax;
 
-
+	
+	public FareXml() {
+		super();
+	}
 	public FareXml(String klass, String basePrice, String fees, String tax) {
 		super();
 		this.klass = klass;

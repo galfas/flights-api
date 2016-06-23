@@ -19,6 +19,9 @@ public class FlightXml {
 	private List<FareXml> fares;
 	
 	
+	public FlightXml() {
+		super();
+	}
 	public FlightXml(String carrierCode, String flightDesignator,
 			String originAirport, String destinationAirport,
 			String departureDate, String arrivalDate, List<FareXml> fares) {
