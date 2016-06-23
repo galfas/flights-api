@@ -12,17 +12,15 @@ public class FlightQuery {
 
 	public FlightQuery(String cityFrom, String cityTo, String dateFrom,
 			String dateTo, Integer quantity) {
-		super();
+		
+		if(!DateUtils.isValidDateYMD(dateFrom) || !DateUtils.isValidDateYMD(dateTo)){
+			throw new IllegalArgumentException();
+		}
+		
 		this.cityFrom = cityFrom;
 		this.cityTo = cityTo;
-		
-		if(DateUtils.isValidDate(dateFrom)){
-			this.dateFrom = dateFrom;
-		}
-		if(DateUtils.isValidDate(dateTo)){
-			this.dateTo = dateTo;
-		}
-		
+		this.dateFrom = dateFrom;
+		this.dateTo = dateTo;
 		this.quantity = quantity;
 	}
 

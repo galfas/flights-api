@@ -1,4 +1,4 @@
-package com.mtt.airline.model;
+	package com.mtt.airline.model;
 
 import java.math.BigDecimal;
 

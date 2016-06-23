@@ -1,5 +1,7 @@
 package com.mtt.airline.model;
 
+
+
 public class FarePrices {
 	
 	private Fare first;
@@ -24,12 +26,14 @@ public class FarePrices {
 	public void setFirst(Fare first) {
 		this.first = first;
 	}
+	
 	public Fare getBusiness() {
 		return business;
 	}
 	public void setBusiness(Fare business) {
 		this.business = business;
 	}
+	
 	public Fare getEconomy() {
 		return economy;
 	}

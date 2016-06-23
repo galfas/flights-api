@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mtt.airline.business.FlightBo;
-import com.mtt.airline.model.FlightQuery;
 import com.mtt.airline.model.FlightOffer;
+import com.mtt.airline.model.FlightQuery;
 
 /**
  * 

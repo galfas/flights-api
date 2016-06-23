@@ -1,5 +1,7 @@
 package com.mtt.airline.model;
 
+
+
 public class Fare {
 	
 	private Price ticket;
@@ -24,12 +26,14 @@ public class Fare {
 	public void setTicket(Price ticket) {
 		this.ticket = ticket;
 	}
+	
 	public Price getBookingFee() {
 		return bookingFee;
 	}
 	public void setBookingFee(Price bookingFee) {
 		this.bookingFee = bookingFee;
 	}
+	
 	public Price getTax() {
 		return tax;
 	}

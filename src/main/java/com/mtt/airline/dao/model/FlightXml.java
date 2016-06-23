@@ -1,33 +1,14 @@
-package com.mtt.airline.model;
+package com.mtt.airline.dao.model;
 
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-
-
-@XmlRootElement(name="Availability")
-@XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
-public class FlightOfferXML {
-
-	private List<FlightXML> flight;
-
-
-	public List<FlightXML> getFlight() {
-		return flight;
-	}
-	@XmlElement(name="Flight")
-	public void setFlight(List<FlightXML> flight) {
-		this.flight = flight;
-	}
-}
 
 @XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
-class FlightXML {
+public class FlightXml {
 
 	private String carrierCode;
 	private String flightDesignator;
@@ -35,7 +16,21 @@ class FlightXML {
 	private String destinationAirport;	
 	private String departureDate;
 	private String arrivalDate;
-	private List<FareXML> fares;
+	private List<FareXml> fares;
+	
+	
+	public FlightXml(String carrierCode, String flightDesignator,
+			String originAirport, String destinationAirport,
+			String departureDate, String arrivalDate, List<FareXml> fares) {
+		super();
+		this.carrierCode = carrierCode;
+		this.flightDesignator = flightDesignator;
+		this.originAirport = originAirport;
+		this.destinationAirport = destinationAirport;
+		this.departureDate = departureDate;
+		this.arrivalDate = arrivalDate;
+		this.fares = fares;
+	}
 
 
 	public String getCarrierCode() {
@@ -86,55 +81,12 @@ class FlightXML {
 		this.arrivalDate = arrivalDate;
 	}
 
-	public List<FareXML> getFares() {
+	public List<FareXml> getFares() {
 		return fares;
 	}
 	@XmlElementWrapper(name = "Fares")
 	@XmlElement(name="Fare")
-	public void setFares(List<FareXML> fares) {
+	public void setFares(List<FareXml> fares) {
 		this.fares = fares;
-	}
-}
-
-@XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
-@XmlRootElement(name="Fare")
-class FareXML{
-	
-	private String klass;
-	private String basePrice;
-	private String fees;
-	private String tax;
-
-
-	public String getKlass() {
-		return klass;
-	}
-	@XmlAttribute(name="class")
-	public void setKlass(String klass) {
-		this.klass = klass;
-	}
-
-	public String getBasePrice() {
-		return basePrice;
-	}
-	@XmlElement(name="BasePrice")
-	public void setBasePrice(String basePrice) {
-		this.basePrice = basePrice;
-	}
-
-	public String getFees() {
-		return fees;
-	}
-	@XmlElement(name="Fees")
-	public void setFees(String fees) {
-		this.fees = fees;
-	}
-
-	public String getTax() {
-		return tax;
-	}
-	@XmlElement(name="Tax")
-	public void setTax(String tax) {
-		this.tax = tax;
 	}
 }
