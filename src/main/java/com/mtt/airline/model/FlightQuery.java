@@ -21,12 +21,12 @@ public class FlightQuery {
 			String dateTo, Integer quantity) {
 		
 		if(!DateUtils.isValidDateYMD(dateFrom)){
-			logger.error("The date from provided are not valid. %s", dateFrom);
-			throw new IllegalArgumentException();
+			logger.error(String.format("The dateFrom provided is not valid: '%s'.", dateFrom));
+			throw new IllegalArgumentException(dateFrom);
 		
-		}else if(DateUtils.isValidDateYMD(dateTo)){
-			logger.error("The date To provided are not valid. %s", dateTo);
-			throw new IllegalArgumentException();
+		}else if(!DateUtils.isValidDateYMD(dateTo)){
+			logger.error(String.format("The dateTo provided is not valid '%s'. ", dateTo));
+			throw new IllegalArgumentException(dateTo);
 		}
 		
 		this.cityFrom = cityFrom;

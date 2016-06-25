@@ -1,11 +1,10 @@
-FROM jetty:9.3-jre8
+FROM tomcat:9.0.0-jre8
+
+MAINTAINER Marcelo Saciloto
 
 user root
 
-COPY ./target/flights-api-0.1.0.jar /usr/local/jetty/webapps/
+ADD . /usr/local/tomcat/
+WORKDIR /usr/local/tomcat/
 
-WORKDIR /usr/local/jetty/
-
-EXPOSE 8080
-
-CMD ["java","-Djava.io.tmpdir=/tmp/jetty","-jar","/usr/local/jetty/start.jar"]
+COPY ./target/flights-api-1.0.0.war  /usr/local/tomcat/webapps/api.war

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -20,7 +22,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @ComponentScan(basePackages={"com.mtt"})
 @PropertySource(value={"classpath:application.properties"})
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class Application {
+public class Application extends SpringBootServletInitializer {
 	
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	 
@@ -28,6 +30,11 @@ public class Application {
     	
     	logger.info("The application is being launched.");
         SpringApplication.run(Application.class, args);
+    }
+    
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
     }
 }
 

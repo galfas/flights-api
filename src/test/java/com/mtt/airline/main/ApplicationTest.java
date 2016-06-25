@@ -1,4 +1,5 @@
-package com.mtt.airline.controller;
+package com.mtt.airline.main;
+
 
 import static org.hamcrest.Matchers.is;
 

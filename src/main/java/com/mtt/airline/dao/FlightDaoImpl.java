@@ -42,7 +42,7 @@ public class FlightDaoImpl implements FlightDao {
 	@Override
 	public FlightOffer getFlights(FlightQuery flightQuery) throws ParseException {
 
-		logger.debug("The fetch of data will be performed with the follow parameters %s", flightQuery.toString());
+		logger.debug(String.format("The fetch of data will be performed with the follow parameters '%s'", flightQuery.toString()));
 		
 		FlightProvider flightProvider = Feign.builder().encoder(new JAXBEncoder(jaxbFactory)).decoder(new JAXBDecoder(jaxbFactory))
 				.target(FlightProvider.class, apiEndpoint);

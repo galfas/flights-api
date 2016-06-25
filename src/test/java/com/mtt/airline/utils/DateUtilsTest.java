@@ -42,13 +42,13 @@ public class DateUtilsTest {
 	@Test
 	public void shouldReturnFullDateTime() throws ParseException{
 		Date date = DateUtils.convertDateFromYMDHMS("2000-01-02T10:48:00.000Z");
+		
 		Assert.assertEquals(date.getTime(), 946817280000L);
 	}
 	
 	@Test(expected=ParseException.class)
 	public void shouldThrowExceptionWithInvalidDate() throws ParseException{
 		Date date = DateUtils.convertDateFromYMDHMS("2000");
-		Assert.assertEquals(date.getTime(), 946817280000L);
 	}
 	
 	@Test
