@@ -48,7 +48,7 @@ public class DateUtilsTest {
 	
 	@Test(expected=ParseException.class)
 	public void shouldThrowExceptionWithInvalidDate() throws ParseException{
-		Date date = DateUtils.convertDateFromYMDHMS("2000");
+		DateUtils.convertDateFromYMDHMS("2000");
 	}
 	
 	@Test
