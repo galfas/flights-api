@@ -1,5 +1,7 @@
 package com.mtt.airline.main;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -19,8 +21,12 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @PropertySource(value={"classpath:application.properties"})
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class Application {
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(Application.class);
+	 
     public static void main(String[] args) {
+    	
+    	logger.info("The application is being launched.");
         SpringApplication.run(Application.class, args);
     }
 }

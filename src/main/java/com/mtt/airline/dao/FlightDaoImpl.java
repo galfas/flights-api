@@ -2,6 +2,8 @@ package com.mtt.airline.dao;
 
 import java.text.ParseException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,8 @@ import feign.jaxb.JAXBEncoder;
 @Component
 public class FlightDaoImpl implements FlightDao {
 
+	private static final Logger logger = LoggerFactory.getLogger(FlightDaoImpl.class);
+	
 	@Value("${flight.fare.api}")
 	private String apiEndpoint;
 	
@@ -38,8 +42,11 @@ public class FlightDaoImpl implements FlightDao {
 	@Override
 	public FlightOffer getFlights(FlightQuery flightQuery) throws ParseException {
 
+		logger.debug("The fetch of data will be performed with the follow parameters %s", flightQuery.toString());
+		
 		FlightProvider flightProvider = Feign.builder().encoder(new JAXBEncoder(jaxbFactory)).decoder(new JAXBDecoder(jaxbFactory))
 				.target(FlightProvider.class, apiEndpoint);
+		
 		
 		FlightOfferXml flightOfferXML = flightProvider.getFlightOfferFor(flightQuery.getCityFrom(), 
 				flightQuery.getCityTo(), flightQuery.getDateFrom(),flightQuery.getDateTo(), flightQuery.getQuantity());
