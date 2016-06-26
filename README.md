@@ -1,8 +1,6 @@
 # flights-api
 This project is built in java 8 with spring boot. It will expose an API that will retrieve, handle and return all the available flights from a given place and local 
 
-##To launch the application##
-
 ## Security
 
 The api is security by basic auth, the user and password is configured via properties:
@@ -10,6 +8,8 @@ The api is security by basic auth, the user and password is configured via prope
 the current configuration is:
 user: flight 
 password: 123456
+
+##To launch the application##
 
 ###Using docker ###
 You could launch it as a container, in this case you need to have docker installed in your server, 
