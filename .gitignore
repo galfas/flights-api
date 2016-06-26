@@ -3,5 +3,6 @@
 .settings
 .classpath
 .externalToolBuilders
+.DS_Store
 bin
 target
