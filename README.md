@@ -1,6 +1,10 @@
 # flights-api
 This project is built in java 8 with spring boot. It will expose an API that will retrieve do a transformation and return all the available flights from a given place and local 
 
+I focused on isolating all the objects from the XML API, because I want to be able to replace that API without having to change anything from my business model.
+
+I would use a layer of cache in my Business layer even if it was for a few seconds, because I would have a better response time and also avoid the possibility the XML api could face some performance issues.
+
 ## Security
 
 The api is uses basic auth, the user and password is configured via properties:
@@ -53,6 +57,3 @@ To execute the test, you have to execute:
 3. Create a docker to perform the build and then use it as a volume to the deploy container.
 4. It is necessary to improve the api security.
 5. Improving the DAO tests
-
-
-
