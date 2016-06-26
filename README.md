@@ -13,10 +13,11 @@ password: 123456
 
 ###Using docker ###
 You could launch it as a container, in this case you need to have docker installed in your server, 
-and then you just need to execute the next commands:
+and then you just need to execute the next commands in the root of the project:
 
-1. *docker build -t flight-api.*
-2. *docker run -it --rm -p 80:80 flight-api-tomcat-web-last*
+1. *mvn package*
+2. *docker build -t flight-api.*
+3. *docker run -it --rm -p 80:80 flight-api-tomcat-web-last*
 
 It will launch your container, to test it  you will need to discovery the container IP and then just access it via browser in the port 8080.
 
