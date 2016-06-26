@@ -3,6 +3,14 @@ This project is built in java 8 with spring boot. It will expose an API that wil
 
 ##To launch the application##
 
+## Security
+
+The api is security by basic auth, the user and password is configured via properties:
+
+the current configuration is:
+user: flight 
+password: 123456
+
 ###Using docker ###
 You could launch it as a container, in this case you need to have docker installed in your server, 
 and then you just need to execute the next commands:
@@ -18,6 +26,7 @@ The command *docker-machine ip* will return your IP and the you can access the a
 
 http://192.168.99.100:8080/api/flights/from/DUB/to/DEL/datefrom/20151007/dateto/20151020/quantity/2
 
+
 ###Via maven ###
 To start via the application via maven, you just have to execute the command: *mvn spring-boot:run*
 To execute the test, you have to execute: *mvn test*
@@ -32,6 +41,7 @@ To execute the test, you have to execute: *mvn test*
 1. Create health check, to test all the external dependencies
 2. Create a circuite breaker, to handle eventual dependency downtime.
 3. Create a docker to perform the build and then use it as a volume to the deploy container.
+4. It is necessary to improve the api security.
 
 
 
