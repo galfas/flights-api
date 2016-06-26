@@ -23,7 +23,7 @@ public class FlightDaoTest {
 		
 		FlightOfferXml flightOfferXml = flightOfferXmlBuilder();
 		
-		FlightOffer flightOffer= FlightOfferBuilder.build(flightOfferXml);
+		FlightOffer flightOffer= FlightOfferBuilder.builder(flightOfferXml);
 		
 		Assert.assertEquals("IST", flightOffer.getAvailability().get(0).getDepartsFrom());
 		Assert.assertEquals("DUB", flightOffer.getAvailability().get(0).getArrivesAt());
@@ -37,7 +37,7 @@ public class FlightDaoTest {
 	public void shouldReturnCompleteFares() throws ParseException{
 		FlightOfferXml flightOfferXml = flightOfferXmlBuilder();
 		
-		FlightOffer flightOffer= FlightOfferBuilder.build(flightOfferXml);
+		FlightOffer flightOffer= FlightOfferBuilder.builder(flightOfferXml);
 		
 		Assert.assertEquals(BigDecimal.valueOf(300.12), flightOffer.getAvailability().get(0).getFarePrices().getFirst().getTicket().getAmmount());
 		Assert.assertEquals(BigDecimal.valueOf(30.01), flightOffer.getAvailability().get(0).getFarePrices().getFirst().getBookingFee().getAmmount());
@@ -58,7 +58,7 @@ public class FlightDaoTest {
 	public void shouldReturnCompleteDynamicaFields() throws ParseException{
 		FlightOfferXml flightOfferXml = flightOfferXmlBuilder();
 		
-		FlightOffer flightOffer= FlightOfferBuilder.build(flightOfferXml);
+		FlightOffer flightOffer= FlightOfferBuilder.builder(flightOfferXml);
 		
 		Assert.assertEquals("02:16", flightOffer.getAvailability().get(0).getFlightTime());
 		Assert.assertEquals("02-01-2014", flightOffer.getAvailability().get(0).getDepartsOn().getDate());

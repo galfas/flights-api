@@ -42,6 +42,7 @@ To execute the test, you have to execute: *mvn test*
 2. Create a circuite breaker, to handle eventual dependency downtime.
 3. Create a docker to perform the build and then use it as a volume to the deploy container.
 4. It is necessary to improve the api security.
+5. Improving the DAO tests
 
 
 

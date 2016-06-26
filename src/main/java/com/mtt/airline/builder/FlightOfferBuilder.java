@@ -25,7 +25,15 @@ public class FlightOfferBuilder {
 	private static final String FIRST_CLASS = "FIF";
 		
 
-	public static FlightOffer build(FlightOfferXml flightOfferXML) throws ParseException{
+	/**
+	 * Method that encapsulate all the necessary logic to build a Flight offer object from
+	 * a flightOfferXML.
+	 * 
+	 * @param flightOfferXML
+	 * @return {@link FlightOffer}
+	 * @throws ParseException
+	 */
+	public static FlightOffer builder(FlightOfferXml flightOfferXML) throws ParseException{
 		List<Flight>flightList = new LinkedList<Flight>();
 		for (FlightXml flightXml : flightOfferXML.getFlight()) {
 			flightList.add(buildFlight(flightXml));
@@ -34,7 +42,13 @@ public class FlightOfferBuilder {
 		return new FlightOffer(flightList);
 	}
 
-	
+	/**	
+	 *  It has the logic to build a flight object 
+	 * 
+	 * @param flightXml 
+	 * @return {@link Flight}
+	 * @throws ParseException
+	 */
 	private static Flight buildFlight(FlightXml flightXml) throws ParseException{
 		Flight flight = new Flight();
 		flight.setDepartsFrom(flightXml.getOriginAirport());
@@ -49,9 +63,16 @@ public class FlightOfferBuilder {
 		return flight;
 	}
 	 
+	/**
+	 * Encapsules all the rules to build Fares.
+	 * @param fares
+	 * 
+	 * @return {@link FarePrices}
+	 */
 	private static FarePrices buildFares(List<FareXml> fares){
 		FarePrices farePrices = new FarePrices();
 		
+		//TODO Improving this logic with a regex. 
 		for (FareXml fare : fares) {
 			
 			String[] baseParts  = fare.getBasePrice().split(REGEX_SEPARATOR);
