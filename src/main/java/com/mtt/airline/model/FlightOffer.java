@@ -22,7 +22,6 @@ public class FlightOffer {
 	public List<Flight> getAvailability() {
 		return availability;
 	}
-	
 	public void setAvailability(List<Flight> availability) {
 		this.availability = availability;
 	}
