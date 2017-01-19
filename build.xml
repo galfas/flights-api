@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="flights-api-bkp" 
-         default="bkp" 
+         default="backup"
          basedir=".">
 
 <property name="projeto" value="${ant.project.name}" />
@@ -11,7 +11,7 @@
     <delete file="${projeto}.zip" />
 </target>
 
-<target name="bkp">
+<target name="backup">
  <zip destfile="${projeto}.zip">
   <fileset dir="${diretorio-para-zipar}" />
  </zip>
